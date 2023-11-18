@@ -1,37 +1,25 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { contactsActions, contactsSelectors } from '../../redux/contacts';
-import { motion, AnimatePresence } from 'framer-motion';
-import { variants } from '../../utils/motionVar';
-import s from './Filter.module.css';
+import { Label, Input, TitleFilter } from './Filter.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { filter } from 'redux/contacts/contactsSlice';
+import { getFilter } from 'redux/contacts/contactsSelectors';
 
-function Filter() {
+const Filter = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(contactsSelectors.getFilter);
-  const contacts = useSelector(contactsSelectors.getContacts);
+  const filterName = useSelector(getFilter);
 
+  const onChangeFilter = evt => {
+    dispatch(filter(evt.currentTarget.value.trim()));
+  };
   return (
-    <>
-      {contacts.length > 0 && (
-        <AnimatePresence>
-          <label className={s.label}>
-            <motion.input
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition="transition"
-              variants={variants}
-              className={s.input}
-              type="text"
-              value={filter}
-              onChange={e =>
-                dispatch(contactsActions.filterContact(e.target.value))
-              }
-            />
-          </label>
-        </AnimatePresence>
-      )}
-    </>
+    <Label htmlFor="" value={filterName}>
+      <TitleFilter>Find contacts by name</TitleFilter>
+      <Input
+        type="text"
+        onChange={onChangeFilter}
+        placeholder="Enter search name"
+      />
+    </Label>
   );
-}
+};
 
 export default Filter;

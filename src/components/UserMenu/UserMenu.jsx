@@ -1,30 +1,23 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { authSelectors, authOperations } from '../../redux/auth';
-import Button from '@material-ui/core/Button';
-import defaultAvatar from '../../img/avatar.png';
-import s from './UserMenu.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import authOperations from 'redux/auth/authOperations';
+import authSelectors from 'redux/auth/authSelectors';
 
-export default function UserMenu() {
+import { MenuContainer, MenuBox, MenuTitle, MenuBtn } from './UserMenu.styled';
+
+function UserMenu() {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
 
   return (
-    <div className={s.container}>
-      <img
-        src={defaultAvatar}
-        alt="Default Avatar"
-        width="32"
-        className={s.avatar}
-      />
-      <span className={s.name}>Welcome, {name}</span>
-      <Button
-        color="secondary"
-        variant="outlined"
-        type="button"
-        onClick={() => dispatch(authOperations.logOut())}
-      >
-        Log out
-      </Button>
-    </div>
+    <MenuContainer>
+      <MenuBox>
+        <MenuTitle> Welcome, {name}</MenuTitle>
+      </MenuBox>
+      <MenuBtn type="button" onClick={() => dispatch(authOperations.logOut())}>
+        Log Out
+      </MenuBtn>
+    </MenuContainer>
   );
 }
+
+export default UserMenu;

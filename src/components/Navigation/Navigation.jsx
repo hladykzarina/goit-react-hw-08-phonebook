@@ -1,28 +1,24 @@
-import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { authSelectors } from '../../redux/auth';
-import s from './Navigation.module.css';
+import { NavLink } from 'react-router-dom';
+import authSelectors from 'redux/auth/authSelectors';
+
+import { Link } from './Navigation.styled';
 
 function Navigation() {
-  const isLoggedIn = useSelector(authSelectors.getIsAuthenticated);
+  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
   return (
-    <nav className={s.nav}>
-      <NavLink to="/" exact className={s.link} activeClassName={s.activeLink}>
+    <NavLink>
+      <Link to="/" exact>
         Home
-      </NavLink>
+      </Link>
 
       {isLoggedIn && (
-        <NavLink
-          to="/contacts"
-          exact
-          className={s.link}
-          activeClassName={s.activeLink}
-        >
+        <Link to="/contacts" exact>
           Contacts
-        </NavLink>
+        </Link>
       )}
-    </nav>
+    </NavLink>
   );
 }
 
