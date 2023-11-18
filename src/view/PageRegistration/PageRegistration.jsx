@@ -40,7 +40,7 @@ function PageRegistration() {
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces."
-            placeholder="Example John"
+            placeholder="Enter your name"
             required
             value={name}
             onChange={handleChange}
@@ -53,7 +53,7 @@ function PageRegistration() {
             name="email"
             pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
             title="Enter your email"
-            placeholder="Example user@mail.com"
+            placeholder="Enter your email"
             required
             value={email}
             onChange={handleChange}

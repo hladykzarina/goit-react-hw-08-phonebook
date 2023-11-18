@@ -1,44 +1,22 @@
-/*.form {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.textField {
-  margin-bottom: 20px !important;
-  width: 100%;
-  background-color: #fff !important;
-}*/
 import styled from '@emotion/styled';
 
 export const PageRegistrationSection = styled.section`
-  display: block;
-  min-width: 420px;
-  max-width: 500px;
-  margin: 0 auto;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 30%;
 
-  width: 80%;
-  max-width: 550px;
-  margin: 1em auto;
-  padding: 1em;
-  border-radius: 10px;
-  background: rgb(100, 100, 100)
-    radial-gradient(
-      circle at 50% 0,
-      rgba(255, 255, 255, 0.65),
-      rgba(255, 255, 255, 0.35)
-    );
-  box-shadow: inset rgba(0, 0, 0, 0.6) 0 -3px 8px,
-    inset rgba(252, 255, 255, 0.7) 0 3px 8px, rgba(0, 0, 0, 0.8) 0 3px 8px -3px;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 40px;
+  background: #7ac37a;
+  padding: 2em;
+  border-radius: 6px;
+  box-shadow: inset rgba(0, 0, 0, 0.6);
 `;
 
 export const PageRegistrationTitle = styled.h2`
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   margin: 0;
   margin-bottom: 20px;
@@ -57,8 +35,8 @@ export const PageRegistrationInput = styled.input`
   display: inline-block;
   box-sizing: border-box;
   transition: background-color 0.5s ease-in-out;
-  border: 2px solid rgb(142, 213, 251);
-  border-radius: 20px;
+  border: 2px solid rgb(8, 78, 8);
+  border-radius: 10px;
   cursor: pointer;
   font-size: 15px;
   box-shadow: 17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset;
@@ -83,12 +61,12 @@ export const PageRegistrationBtn = styled.button`
   width: 100px;
   height: 100%;
   padding: 5px;
-  border-radius: 20px;
+  border-radius: 10px;
   color: #ffffff;
   cursor: pointer;
   font-size: 15px;
   box-shadow: 17px 17px 84px 18px rgba(21, 15, 15, 0.2) inset;
-  border: 2px solid rgb(142, 213, 251);
+  border: 2px solid rgb(8, 78, 8);
   background-color: #858181;
 
   &:hover,

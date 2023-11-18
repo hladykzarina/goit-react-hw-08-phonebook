@@ -36,9 +36,9 @@ function ContactForm() {
     if (!isAdding) {
       createContact(data);
       reset();
-      toast.success(`😃 Contact, ${name} successfully added`);
+      toast.success(`Contact, ${name} successfully added`);
     } else {
-      toast.error(`😏${data.name} is already in contacts.`);
+      toast.error(`${data.name} is already in contacts.`);
     }
   };
 

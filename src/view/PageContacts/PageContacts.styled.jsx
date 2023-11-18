@@ -1,10 +1,3 @@
-/*.wrapper {
-  max-width: 450px;
-  margin: 0 auto;
-  padding-top: 30px;
-  text-align: center;
-}
-*/
 import styled from '@emotion/styled';
 
 export const PageContactSection = styled.div`
@@ -15,22 +8,15 @@ export const PageContactSection = styled.div`
   margin: 1em auto;
   padding: 1em;
   border-radius: 10px;
-  background: rgb(100, 100, 100)
-    radial-gradient(
-      circle at 0 0,
-      rgba(255, 255, 255, 0.65),
-      rgba(255, 255, 255, 0.35)
-    );
-  box-shadow: inset rgba(0, 0, 0, 0.5) -3px -3px 8px,
-    inset rgba(255, 255, 255, 0.9) 3px 3px 8px,
-    rgba(0, 0, 0, 0.8) 3px 3px 8px -3px;
+  background: #386b44;
+  border: 2px solid gold;
 `;
 export const PageContactTitle = styled.h1`
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 10px;
   font-weight: 700;
-  color: var(--primaryTextColor);
+  color: black;
   transition: all 0.5s ease;
-  text-shadow: 2px 2px 4px blue;
+  text-shadow: 2px 2px 4px gold;
 `;

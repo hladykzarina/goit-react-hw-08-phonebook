@@ -38,7 +38,7 @@ function PageLogin() {
             name="email"
             pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
             title="Enter your email"
-            placeholder="Example user@mail.com"
+            placeholder="Enter your email"
             required
             value={email}
             onChange={handleChange}
